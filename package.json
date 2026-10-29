@@ -1,0 +1,23 @@
+{
+  "name": "petchain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PetChain - plataforma de coordenação e rastreabilidade de resgates de animais (MVP para hackathon).",
+  "workspaces": [
+    "packages/shared",
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace @petchain/shared",
+    "dev:backend": "npm run dev --workspace @petchain/backend",
+    "dev:frontend": "npm run dev --workspace @petchain/frontend",
+    "seed": "npm run seed --workspace @petchain/backend",
+    "test": "npm run test --workspace @petchain/shared && npm run test --workspace @petchain/backend",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "license": "MIT"
+}
